@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69", "wheel", "pybind11>=2.10"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rna-map-mini"
+version = "1.0.0"
+description = "RNA MAP: Rapid analysis of RNA mutational profiling (MaP) experiments"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  { name = "Joe Yesselman", email = "jyesselm@unl.edu" }
+]
+dependencies = [
+    "numpy>=1.21",
+    "pandas>=1.5",
+    "pyyaml>=6.0",
+    "tabulate>=0.9",
+    "matplotlib>=3.5",
+    "pybind11>=2.10",
+]
+
+[project.optional-dependencies]
+cpp = ["pybind11>=2.10"]
+optuna = ["optuna>=3.0", "plotly>=5.0"]
+pysam = ["pysam>=0.21"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1.0",
+    "black>=23.0",
+    "mypy>=1.0",
+]
+
+[tool.setuptools]
+packages = ["rna_map_mini"]
+zip-safe = false
+
+[tool.setuptools.package-data]
+rna_map_mini = ["**/*.yml", "**/*.txt", "**/*.csv", "**/*.json", "**/*.jar"]
+
+# C++ extensions are defined in setup.py (pybind11 requires special handling)
+# The setup.py file is minimal and only contains extension definitions
