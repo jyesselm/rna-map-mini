@@ -12,21 +12,19 @@ from pathlib import Path
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 from setuptools import setup
 
-# Get project root
+# Get project root (setup.py directory)
 project_root = Path(__file__).parent
-cpp_dir = project_root / "cpp"
-include_dir = cpp_dir / "include"
-src_dir = cpp_dir / "src"
 
-# Define C++ extension
+# Use relative paths from setup.py directory (required by setuptools)
+# Paths must be relative, not absolute
 ext_modules = [
     Pybind11Extension(
         "rna_map_mini._bit_vector_cpp",
         [
-            str(src_dir / "bit_vector_generator.cpp"),
-            str(src_dir / "bindings.cpp"),
+            "cpp/src/bit_vector_generator.cpp",
+            "cpp/src/bindings.cpp",
         ],
-        include_dirs=[str(include_dir)],
+        include_dirs=["cpp/include"],
         cxx_std=17,
         language="c++",
     ),

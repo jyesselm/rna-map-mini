@@ -7,7 +7,7 @@ name = "rna-map-mini"
 version = "1.0.0"
 description = "RNA MAP: Rapid analysis of RNA mutational profiling (MaP) experiments"
 requires-python = ">=3.10"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
   { name = "Joe Yesselman", email = "jyesselm@unl.edu" }
 ]
