@@ -33,7 +33,7 @@ dev = [
 ]
 
 [tool.setuptools]
-packages = ["rna_map_mini"]
+packages = {find = {}}
 zip-safe = false
 
 [tool.setuptools.package-data]
