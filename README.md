@@ -63,6 +63,19 @@ result = generate_bit_vectors(
 )
 ```
 
+## Parameter Tuning
+
+For comprehensive documentation on all tunable parameters and suggested new parameters for customization, see [PARAMETERS.md](PARAMETERS.md).
+
+The package supports extensive parameter customization for:
+- Quality score filtering
+- Mapping quality thresholds
+- Mutation detection constraints
+- Output format and storage
+- Performance optimization
+
+See the parameters documentation for detailed information on existing parameters and suggestions for future enhancements.
+
 ## Package Structure
 
 - `rna_map_mini.io`: Input/output operations (FASTA, FASTQ, SAM, CSV parsing)
